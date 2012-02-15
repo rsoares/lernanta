@@ -157,6 +157,7 @@ INSTALLED_APPS = (
     'lernanta.apps.tags',
     'lernanta.apps.tracker',
     'lernanta.apps.reviews',
+    'tastypie',
 )
 
 TEMPLATE_CONTEXT_PROCESSORS = (
