@@ -55,7 +55,8 @@ USE_I18N = True
 # calendars according to the current locale
 USE_L10N = True
 
-SUPPORTED_NONLOCALES = ('media', '.well-known', 'pubsub', 'broadcasts', 'ajax')
+SUPPORTED_NONLOCALES = ('media', '.well-known', 'pubsub', 'broadcasts', 'ajax',
+    'api',)
 
 # Absolute path to the directory that holds media.
 # Example: "/home/media/media.lawrence.com/"
@@ -92,6 +93,7 @@ MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
 MIDDLEWARE_CLASSES = (
     'drumbeat.middleware.NotFoundMiddleware',
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
+    'api.middleware.APISubdomainMiddleware',
     'l10n.middleware.LocaleURLRewriter',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -204,13 +206,6 @@ CACHE_COUNT_TIMEOUT = 60
 # Email goes to the console by default.  s/console/smtp/ for regular delivery
 EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 DEFAULT_FROM_EMAIL = 'admin@p2pu.org'
-
-# RabbitMQ Config
-BROKER_HOST = "localhost"
-BROKER_PORT = 5672
-BROKER_USER = ""
-BROKER_PASSWORD = ""
-BROKER_VHOST = ""
 
 CELERY_RESULT_BACKEND = "amqp"
 
