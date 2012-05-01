@@ -45,6 +45,10 @@ LANGUAGE_CODE = 'en'
 SUPPORTED_LANGUAGES = tuple([(i.lower(), l10n.locales.LOCALES[i].native)
     for i in l10n.locales.LOCALES])
 
+# Switch on/off API domain
+API_DOMAIN = False
+
+# Site ID must be changed if API domain is on
 SITE_ID = 1
 
 # If you set this to False, Django will make some optimizations so as not
@@ -93,6 +97,7 @@ MIDDLEWARE_CLASSES = (
     'drumbeat.middleware.NotFoundMiddleware',
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
     'l10n.middleware.LocaleURLRewriter',
+    'lernanta.apps.api.middleware.APISubdomainMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
