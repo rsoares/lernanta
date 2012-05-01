@@ -8,6 +8,7 @@ class APISubdomainMiddleware:
         if settings.API_DOMAIN:
             #raise Http404  #  Should I raise Http404?
             request.urlconf = urls.urlpatterns
+
         """Parse out the subdomain from the request and redirect to API"""
         host = request.META.get('HTTP_HOST', '')
         host_s = host.replace('www.', '').split('.')
