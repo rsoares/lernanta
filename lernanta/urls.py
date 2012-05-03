@@ -26,7 +26,6 @@ urlpatterns = patterns('',
     (r'metrics/',        include('tracker.urls')),
     (r'reviews/',        include('reviews.urls')),
     (r'',                include('users.urls')),
-    (r'',                include('api.urls')),
 )
 
 media_url = settings.MEDIA_URL.lstrip('/').rstrip('/')
