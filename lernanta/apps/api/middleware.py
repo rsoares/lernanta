@@ -15,8 +15,5 @@ class APISubdomainMiddleware:
         # The URLCONF_ROOT will be replaced and only the api urls will be available.
         if settings.API_DOMAIN:
             request.urlconf = 'lernanta.apps.api.urls'
-        else:
-            raise Http404
             
         return None
-

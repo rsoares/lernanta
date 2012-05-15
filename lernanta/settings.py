@@ -98,7 +98,6 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.redirects.middleware.RedirectFallbackMiddleware',
     'api.middleware.APISubdomainMiddleware',
     'l10n.middleware.LocaleURLRewriter',
-    'lernanta.apps.api.middleware.APISubdomainMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
